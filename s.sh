@@ -1,10 +1,3 @@
 #!/bin/bash
-sudo apt update -y
-# sudo apt install docker.io
-sudo apt install wget -y
-wget https://releases.hashicorp.com/packer/0.9.0/packer_0.9.0_linux_386.zip -y
-apt-get install unzip -y 
-unzip packer_0.9.0_linux_386.zip -y
-export PATH=$PATH:~/packer/
-packer
 
+apt update -y

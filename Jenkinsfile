@@ -2,7 +2,7 @@ pipeline{
 agent{
 docker { 
 image 'ubuntu:18.04'
-args '--entrypoint=' } }
+args '-u root --entrypoint=' } }
 environment {
 CREDS = credentials('sara-aws')
 AWS_ACCESS_KEY_ID="${CREDS_USR}"
