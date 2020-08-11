@@ -2,7 +2,7 @@ pipeline{
 agent{
 docker { 
 image 'bryandollery/terraform-packer-aws-alpine'
-args '--enterypoint=' } }
+args '--entrypoint=' } }
 environment {
                 CREDS = credentials('sara-aws')
 }
