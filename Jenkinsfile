@@ -1,7 +1,7 @@
 pipeline{
 agent{
 docker { 
-image 'bryandollery/terraform-packer-aws-alpine'
+image 'bryandollery/alpine-docker'
 args '--entrypoint=' } }
 environment {
 CREDS = credentials('sara-aws')
@@ -15,8 +15,7 @@ stage('build'){
 steps{
 
 
-sh 'docker run -it bryandollery/terraform-packer-aws-alpine'
-sh "docker exec $$(basename $$PWD) bash"
+sh 'docker run -it bryandollery/terraform-packer-aws-alpine bash'
 sh 'packer build packer.json'
 }
 
