@@ -1,7 +1,7 @@
 pipeline{
 agent{
 docker { 
-image 'ubuntu:18.04'
+image 'bryandollery/terraform-packer-aws-alpine'
 args '-u root --entrypoint=' } }
 environment {
 CREDS = credentials('sara-aws')
@@ -14,8 +14,6 @@ stages{
 stage('build'){
 steps{
 
-sh 'chmod a+x s.sh'
-sh './s.sh'
 sh 'packer build packer.json'
 }
 
