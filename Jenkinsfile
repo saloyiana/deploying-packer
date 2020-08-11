@@ -1,7 +1,7 @@
 pipeline{
 agent{
 docker { 
-image 'ubuntu'
+image 'ubuntu:18.04'
 args '--entrypoint=' } }
 environment {
 CREDS = credentials('sara-aws')
@@ -15,14 +15,7 @@ stage('build'){
 steps{
 
 
-sh 'sudo apt update'
-sh 'sudo apt install docker.io'
-sh 'sudo apt install wget'
-sh 'wget https://releases.hashicorp.com/packer/0.9.0/packer_0.9.0_linux_386.zip'
-sh 'sudo apt-get install unzip'
-sh 'unzip packer_0.9.0_linux_386.zip'
-sh 'export PATH=$PATH:~/packer/'
-sh 'packer'
+sh './s.sh'
 sh 'packer build packer.json'
 }
 
