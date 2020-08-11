@@ -15,7 +15,7 @@ stage('build'){
 steps{
 
 sh 'make'
-sh 'make build'
+sh 'packer build packer.json'
 }
 
 }
