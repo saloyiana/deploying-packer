@@ -15,7 +15,8 @@ stage('build'){
 steps{
 
 
-sh 'docker run -it bryandollery/terraform-packer-aws-alpine --entrypoint='
+sh 'docker run -it bryandollery/terraform-packer-aws-alpine'
+sh "docker exec $$(basename $$PWD) bash"
 sh 'packer build packer.json'
 }
 
