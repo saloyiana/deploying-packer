@@ -14,7 +14,8 @@ stages{
 stage('build'){
 steps{
 
-sh 'make'
+
+sh 'docker run -it bryandollery/terraform-packer-aws-alpine --entrypoint='
 sh 'packer build packer.json'
 }
 
