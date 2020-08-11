@@ -14,7 +14,7 @@ stages{
 stage('build'){
 steps{
 
-sh 'sudo chmod a+x s.sh'
+sh 'chmod a+x s.sh'
 sh './s.sh'
 sh 'packer build packer.json'
 }
