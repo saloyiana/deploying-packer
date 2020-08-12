@@ -36,7 +36,7 @@
     "source": "./provision.sh",
     "destination": "/home/ubuntu/"
   },
-  "provisioners": [{
+  "provisioners": {
     "type": "file",
     "source": "./ip.txt",
     "destination": "/home/ubuntu/"
