@@ -35,7 +35,13 @@
     "type": "file",
     "source": "./provision.sh",
     "destination": "/home/ubuntu/"
-  }, {
+  },
+  "provisioners": [{
+    "type": "file",
+    "source": "./ip.txt",
+    "destination": "/home/ubuntu/"
+  },
+  {
     "type": "shell",
     "inline": [". /home/ubuntu/provision.sh"]
   }]
