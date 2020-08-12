@@ -19,8 +19,8 @@ sh 'packer build packer.json'
 }
 
 }
-post{
-success{
+post {
+    success {
 build quietPeriod: 0, job: 'sarah-lab-2b'
 
 }
