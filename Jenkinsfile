@@ -23,6 +23,5 @@ post {
 build quietPeriod: 0, job: 'sarah-lab-2b'
 
 }
-
 }
 }
