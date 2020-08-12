@@ -9,6 +9,7 @@ AWS_ACCESS_KEY_ID="${CREDS_USR}"
 AWS_SECRET_ACCESS_KEY="${CREDS_PSW}"
 OWNER="sarah"
 PROJECT_NAME="sarah-webserver"
+TF_NAMESPACE="sarah"
 }
 stages{
 stage('build'){
