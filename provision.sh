@@ -13,7 +13,7 @@ Description=Nginx
 After=docker.service
 [Service]
 Type=simple
-ExecStart=sudo docker container run -d --name nginx -p 80:8080 --restart=always -v /home/ubuntu/nginx_home/:/usr/share/nginx/html:ro nginx
+ExecStart=sudo docker container run -d --name nginx -p 80:80 --restart=always -v /home/ubuntu/nginx_home/:/usr/share/nginx/html:ro nginx
 [Install]
 WantedBy=multi-user.target
 EOF
