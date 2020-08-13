@@ -3,6 +3,9 @@ sudo apt update -y && sudo apt install -y curl vim jq git make docker.io
 sudo usermod -aG docker ubuntu
 cd /home/ubuntu
 mkdir nginx_home
+chmod a+rwx nginx_home
+sudo touch /etc/systemd/system/nginx.service
+sudo chmod a+rw /etc/systemd/system/nginx.service
 sudo docker pull nginx
 cat <<EOF > /etc/systemd/system/nginx.service
 [Unit]
