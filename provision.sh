@@ -18,7 +18,7 @@ ExecStart=sudo docker container run -d --name nginx -p 80:8080 --restart=always 
 [Install]
 WantedBy=multi-user.target
 EOF
-sudo chmod a+r /etc/systemd/system/nginx.service
+sudo chmod a-xw /etc/systemd/system/nginx.service
 sudo systemctl daemon-reload
 sudo systemctl enable nginx
 sudo systemctl start nginx
