@@ -7,7 +7,6 @@ chmod a+rwx nginx_home
 sudo chown ubuntu:ubuntu /home/ubuntu/nginx_home
 sudo touch /etc/systemd/system/nginx.service
 sudo chmod a+rw /etc/systemd/system/nginx.service
-sudo docker pull nginx
 cat <<EOF > /etc/systemd/system/nginx.service
 [Unit]
 Description=Nginx 
