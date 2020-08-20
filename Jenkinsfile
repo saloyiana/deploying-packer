@@ -27,11 +27,10 @@ TF_NAMESPACE="sarah"
 }
 stages{
 stage('build'){
-steps 
+steps{ 
  container('packer') 
 {
-
 sh 'packer build packer.json'
 }
-} }
+} }}
 }
