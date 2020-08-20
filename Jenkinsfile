@@ -1,8 +1,22 @@
 pipeline{
 agent{
-docker { 
-image 'bryandollery/terraform-packer-aws-alpine'
-args '-u root --entrypoint=' } }
+   kubernetes {
+      yaml """
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    some-label: some-label-value
+spec:
+  containers:
+  - name: packer
+    image: hashicorp/packer 
+    command: 
+    - bash
+    tty: true
+"""
+    }
+  }
 environment {
 CREDS = credentials('sara-aws')
 AWS_ACCESS_KEY_ID="${CREDS_USR}"
@@ -13,14 +27,11 @@ TF_NAMESPACE="sarah"
 }
 stages{
 stage('build'){
-steps{
+steps 
+ container('packer') 
+{
 
 sh 'packer build packer.json'
 }
 } }
-post {
-    success {
-build quietPeriod: 0, job: 'sarah-lab-2b'
-}
-}
 }
