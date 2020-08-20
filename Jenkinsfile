@@ -16,7 +16,7 @@ spec:
     tty: true
 """
     }
-  }
+}
 environment {
 CREDS = credentials('sara-aws')
 AWS_ACCESS_KEY_ID="${CREDS_USR}"
